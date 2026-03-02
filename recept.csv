@@ -1,0 +1,370 @@
+Étel;Alapanyag;Mennyiség
+Margherita pizza;liszt;250
+Margherita pizza;víz;150
+Margherita pizza;élesztő;5
+Margherita pizza;só;3
+Margherita pizza;olívaolaj;10
+Margherita pizza;paradicsomszósz;80
+Margherita pizza;mozzarella;100
+Margherita pizza;bazsalikom;2
+Prosciutto pizza;liszt;250
+Prosciutto pizza;víz;150
+Prosciutto pizza;paradicsomszósz;80
+Prosciutto pizza;mozzarella;100
+Prosciutto pizza;sonka;60
+Prosciutto pizza;olívaolaj;10
+Capricciosa pizza;liszt;250
+Capricciosa pizza;paradicsomszósz;80
+Capricciosa pizza;mozzarella;100
+Capricciosa pizza;sonka;40
+Capricciosa pizza;gomba;30
+Capricciosa pizza;articsóka;30
+Capricciosa pizza;fekete olajbogyó;15
+Quattro Formaggi pizza;liszt;250
+Quattro Formaggi pizza;paradicsomszósz;80
+Quattro Formaggi pizza;mozzarella;40
+Quattro Formaggi pizza;gorgonzola;30
+Quattro Formaggi pizza;parmezán;20
+Quattro Formaggi pizza;ementáli;30
+Quattro Formaggi pizza;bazsalikom;2
+Magyaros pizza;liszt;250
+Magyaros pizza;paradicsomszósz;80
+Magyaros pizza;mozzarella;80
+Magyaros pizza;kolbász;40
+Magyaros pizza;bacon;30
+Magyaros pizza;lilahagyma;30
+Magyaros pizza;erős paprika;10
+Hawaii pizza;liszt;250
+Hawaii pizza;paradicsomszósz;80
+Hawaii pizza;mozzarella;100
+Hawaii pizza;sonka;50
+Hawaii pizza;ananász;60
+Diavola pizza;liszt;250
+Diavola pizza;paradicsomszósz;80
+Diavola pizza;mozzarella;100
+Diavola pizza;csípős szalámi;50
+Diavola pizza;chili pehely;2
+Songoku pizza;liszt;250
+Songoku pizza;paradicsomszósz;80
+Songoku pizza;mozzarella;100
+Songoku pizza;sonka;30
+Songoku pizza;gomba;30
+Songoku pizza;kukorica;30
+Húsimádó pizza;liszt;250
+Húsimádó pizza;paradicsomszósz;80
+Húsimádó pizza;mozzarella;100
+Húsimádó pizza;sonka;30
+Húsimádó pizza;szalámi;30
+Húsimádó pizza;bacon;30
+Húsimádó pizza;darált hús;30
+Vegetáriánus pizza;liszt;250
+Vegetáriánus pizza;paradicsomszósz;80
+Vegetáriánus pizza;mozzarella;100
+Vegetáriánus pizza;gomba;30
+Vegetáriánus pizza;kukorica;30
+Vegetáriánus pizza;borsó;20
+Vegetáriánus pizza;kápia paprika;20
+Bolognai pizza;liszt;250
+Bolognai pizza;mozzarella;100
+Bolognai pizza;bolognai ragu;150
+Bolognai pizza;parmezán;10
+Bolognai pizza;bazsalikom;2
+Görög pizza;liszt;250
+Görög pizza;paradicsomszósz;80
+Görög pizza;mozzarella;80
+Görög pizza;feta sajt;50
+Görög pizza;olíva bogyó;30
+Görög pizza;paradicsom szelet;40
+Görög pizza;oregano;1
+Mexikói pizza;liszt;250
+Mexikói pizza;paradicsomszósz;80
+Mexikói pizza;mozzarella;100
+Mexikói pizza;vörösbab;40
+Mexikói pizza;kukorica;40
+Mexikói pizza;jalapeno;15
+Mexikói pizza;darált hús;50
+Tenger gyümölcsei pizza;liszt;250
+Tenger gyümölcsei pizza;paradicsomszósz;80
+Tenger gyümölcsei pizza;tenger gyümölcsei mix;120
+Tenger gyümölcsei pizza;fokhagyma;5
+Tenger gyümölcsei pizza;citrom;10
+BBQ csirkés pizza;liszt;250
+BBQ csirkés pizza;BBQ szósz;80
+BBQ csirkés pizza;mozzarella;100
+BBQ csirkés pizza;sült csirkemell;80
+BBQ csirkés pizza;lilahagyma;30
+Négysajtos gnocchi;gnocchi tészta;250
+Négysajtos gnocchi;főzőtejszín;100
+Négysajtos gnocchi;trappista sajt;30
+Négysajtos gnocchi;gorgonzola;20
+Négysajtos gnocchi;parmezán;20
+Négysajtos gnocchi;füstölt sajt;20
+Négysajtos gnocchi;fehérbors;1
+Bolognai spagetti;spagetti;150
+Bolognai spagetti;darált marhahús;100
+Bolognai spagetti;vöröshagyma;30
+Bolognai spagetti;paradicsomszósz;120
+Bolognai spagetti;fokhagyma;5
+Bolognai spagetti;parmezán;20
+Bolognai spagetti;olívaolaj;10
+Carbonara spagetti;spagetti;150
+Carbonara spagetti;bacon;60
+Carbonara spagetti;tojássárgája;2
+Carbonara spagetti;tejszín;50
+Carbonara spagetti;parmezán;30
+Carbonara spagetti;feketebors;2
+Lasagne;lasagne tészta;100
+Lasagne;darált hús;150
+Lasagne;paradicsom;100
+Lasagne;tej;150
+Lasagne;vaj;20
+Lasagne;liszt;20
+Lasagne;sajt;50
+Pesto pasta;penne;150
+Pesto pasta;bazsalikom pesto;60
+Pesto pasta;fenyőmag;5
+Pesto pasta;olívaolaj;10
+Pesto pasta;parmezán;20
+Húsleves gazdagon;marha lábszár;150
+Húsleves gazdagon;sárgarépa;50
+Húsleves gazdagon;fehérrépa;30
+Húsleves gazdagon;zeller;20
+Húsleves gazdagon;vöröshagyma;20
+Húsleves gazdagon;levesbetét tészta;40
+Húsleves gazdagon;szemesbors;2
+Gulyásleves;marhahús;150
+Gulyásleves;burgonya;120
+Gulyásleves;vöröshagyma;50
+Gulyásleves;sárgarépa;40
+Gulyásleves;fűszerpaprika;15
+Gulyásleves;zsír;20
+Gulyásleves;kömény;1
+Fokhagymakrémleves;fokhagyma;40
+Fokhagymakrémleves;főzőtejszín;150
+Fokhagymakrémleves;vaj;20
+Fokhagymakrémleves;alaplé;200
+Fokhagymakrémleves;pirított kenyérkocka;30
+Gyümölcsleves;meggy;50
+Gyümölcsleves;alma;50
+Gyümölcsleves;szilva;50
+Gyümölcsleves;tejszín;100
+Gyümölcsleves;szegfűszeg;1
+Gyümölcsleves;cukor;20
+Paradicsomleves;paradicsomlé;300
+Paradicsomleves;zeller;20
+Paradicsomleves;cukor;15
+Paradicsomleves;betűtészta;30
+Paradicsomleves;só;2
+Jókai bableves;szárazbab;100
+Jókai bableves;füstölt csülök;80
+Jókai bableves;debreceni kolbász;40
+Jókai bableves;tejföl;50
+Jókai bableves;liszt;10
+Jókai bableves;ecet;5
+Tárkonyos csirkeraguleves;csirkemell;120
+Tárkonyos csirkeraguleves;vegyes zöldség;80
+Tárkonyos csirkeraguleves;tejszín;50
+Tárkonyos csirkeraguleves;tárkony;3
+Tárkonyos csirkeraguleves;citromlé;10
+Rántott sajt sült krumplival;trappista sajt;150
+Rántott sajt sült krumplival;tojás;1
+Rántott sajt sült krumplival;liszt;30
+Rántott sajt sült krumplival;zsemlemorzsa;50
+Rántott sajt sült krumplival;burgonya;250
+Rántott sajt sült krumplival;olaj;100
+Rántott szelet rizibizivel;sertéskaraj;180
+Rántott szelet rizibizivel;liszt;30
+Rántott szelet rizibizivel;tojás;1
+Rántott szelet rizibizivel;zsemlemorzsa;50
+Rántott szelet rizibizivel;rizs;120
+Rántott szelet rizibizivel;borsó;40
+Cordon Bleu;csirkemell;180
+Cordon Bleu;sajt;40
+Cordon Bleu;sonka;40
+Cordon Bleu;panírmorzsa;60
+Cordon Bleu;olaj;100
+Cigánypecsenye;sertés tarja;200
+Cigánypecsenye;szalonna;40
+Cigánypecsenye;fokhagyma;20
+Cigánypecsenye;fűszerpaprika;5
+Cigánypecsenye;sült burgonya;250
+Brassói aprópecsenye;sertéscomb;180
+Brassói aprópecsenye;burgonya;250
+Brassói aprópecsenye;fokhagyma;15
+Brassói aprópecsenye;bors;3
+Brassói aprópecsenye;zsír;20
+Vadas marhasült;marhahús;180
+Vadas marhasült;sárgarépa;100
+Vadas marhasült;fehérrépa;50
+Vadas marhasült;mustár;20
+Vadas marhasült;tejföl;50
+Vadas marhasült;zsemlegombóc;150
+Sztrapacska;burgonya;300
+Sztrapacska;liszt;150
+Sztrapacska;tojás;1
+Sztrapacska;juhtúró;100
+Sztrapacska;füstölt szalonna;50
+Sztrapacska;tejföl;50
+Túros csusza tepertővel;csusza tészta;200
+Túros csusza tepertővel;túró;150
+Túros csusza tepertővel;tejföl;100
+Túros csusza tepertővel;füstölt szalonna;60
+Görög saláta;paradicsom;100
+Görög saláta;uborka;100
+Görög saláta;kaliforniai paprika;50
+Görög saláta;lilahagyma;30
+Görög saláta;feta sajt;80
+Görög saláta;olívaolaj;20
+Görög saláta;olíva bogyó;30
+Cézár saláta csirkével;római saláta;150
+Cézár saláta csirkével;csirkemell;120
+Cézár saláta csirkével;parmezán;20
+Cézár saláta csirkével;kenyérkocka;40
+Cézár saláta csirkével;anchovi;5
+Cézár saláta csirkével;majonéz;30
+Tonhalsaláta;vegyes saláta;150
+Tonhalsaláta;tonhal;100
+Tonhalsaláta;lilahagyma;30
+Tonhalsaláta;tojás;1
+Tonhalsaláta;citromlé;10
+Sült krumpli;burgonya;300
+Sült krumpli;olaj;150
+Sült krumpli;só;5
+Párolt rizs;rizs;150
+Párolt rizs;olaj;15
+Párolt rizs;hagyma;10
+Párolt rizs;só;2
+Grillezett zöldségek;cukkini;80
+Grillezett zöldségek;padlizsán;80
+Grillezett zöldségek;paprika;80
+Grillezett zöldségek;gomba;50
+Grillezett zöldségek;olívaolaj;20
+Uborkasaláta;kígyóuborka;200
+Uborkasaláta;fokhagyma;5
+Uborkasaláta;ecet;15
+Uborkasaláta;cukor;10
+Uborkasaláta;tejföl;30
+Csemegeuborka;savanyított uborka;150
+Almapaprika;töltött paprika;150
+Somlói galuska;piskóta;120
+Somlói galuska;dió;30
+Somlói galuska;mazsola;20
+Somlói galuska;rum;10
+Somlói galuska;csokiöntet;60
+Somlói galuska;tejszínhab;40
+Tiramisu;mascarpone;150
+Tiramisu;babapiskóta;80
+Tiramisu;kávé;100
+Tiramisu;tojássárgája;2
+Tiramisu;cukor;40
+Tiramisu;kakaópor;5
+Gundel palacsinta;liszt;50
+Gundel palacsinta;tej;100
+Gundel palacsinta;tojás;1
+Gundel palacsinta;dió;50
+Gundel palacsinta;rum;15
+Gundel palacsinta;csokoládé;40
+Kakaós palacsinta;liszt;50
+Kakaós palacsinta;tej;100
+Kakaós palacsinta;tojás;1
+Kakaós palacsinta;kakaópor;20
+Kakaós palacsinta;cukor;15
+Túrós palacsinta;liszt;50
+Túrós palacsinta;tej;100
+Túrós palacsinta;tojás;1
+Túrós palacsinta;túró;100
+Túrós palacsinta;mazsola;15
+Gesztenyepüré;gesztenyemassza;150
+Gesztenyepüré;porcukor;20
+Gesztenyepüré;rumaroma;5
+Gesztenyepüré;tejszínhab;50
+Baklava;réteslap;100
+Baklava;dió;80
+Baklava;vaj;50
+Baklava;cukorszirup;100
+Baklava;méz;30
+Sajttorta;keksz;100
+Sajttorta;vaj;50
+Sajttorta;krémsajt;250
+Sajttorta;cukor;80
+Sajttorta;tojás;2
+Sajttorta;vanília;2
+Brownie fagyival;étcsokoládé;100
+Brownie fagyival;vaj;80
+Brownie fagyival;cukor;100
+Brownie fagyival;liszt;50
+Brownie fagyival;tojás;2
+Brownie fagyival;vaníliafagylalt;80
+Marhapörkölt galuskával;marhalábszár;200
+Marhapörkölt galuskával;vöröshagyma;100
+Marhapörkölt galuskával;zsír;30
+Marhapörkölt galuskával;vörösbor;50
+Marhapörkölt galuskával;galuska tészta;200
+Székelykáposzta;savanyú káposzta;250
+Székelykáposzta;sertéslapocka;150
+Székelykáposzta;vöröshagyma;40
+Székelykáposzta;fűszerpaprika;10
+Székelykáposzta;tejföl;50
+Töltött káposzta;káposztalevél;150
+Töltött káposzta;vágott káposzta;150
+Töltött káposzta;darált sertéshús;150
+Töltött káposzta;rizs;40
+Töltött káposzta;füstölt szalonna;30
+Töltött káposzta;tejföl;50
+Hortobágyi húsos palacsinta;liszt;50
+Hortobágyi húsos palacsinta;tej;100
+Hortobágyi húsos palacsinta;pörkölthús;100
+Hortobágyi húsos palacsinta;tejföl;60
+Hortobágyi húsos palacsinta;paprika mártás;80
+Sült kacsacomb párolt káposztával;kacsacomb;250
+Sült kacsacomb párolt káposztával;lila káposzta;200
+Sült kacsacomb párolt káposztával;cukor;20
+Sült kacsacomb párolt káposztával;ecet;10
+Sült kacsacomb párolt káposztával;kömény;1
+Lazacsteak salátaágyon;lazacfilé;200
+Lazacsteak salátaágyon;vaj;20
+Lazacsteak salátaágyon;citrom;20
+Lazacsteak salátaágyon;bébispenót;50
+Lazacsteak salátaágyon;koktélparadicsom;50
+Rántott gomba;csiperkegomba;200
+Rántott gomba;liszt;30
+Rántott gomba;tojás;1
+Rántott gomba;zsemlemorzsa;50
+Rántott gomba;tartármártás;50
+Rántott karfiol;karfiol;250
+Rántott karfiol;liszt;30
+Rántott karfiol;tojás;1
+Rántott karfiol;zsemlemorzsa;50
+Rántott karfiol;olaj;100
+Tatárbeársteak;bélszín;200
+Tatárbeársteak;tojássárgája;1
+Tatárbeársteak;vaj;30
+Tatárbeársteak;lilahagyma;20
+Tatárbeársteak;kapribogyó;10
+Tatárbeársteak;mustár;10
+Tatárbeársteak;pirítós;3
+Bruschetta;baguett;100
+Bruschetta;paradicsom;80
+Bruschetta;fokhagyma;10
+Bruschetta;olívaolaj;20
+Bruschetta;bazsalikom;5
+Camembert rántva áfonyával;camembert sajt;120
+Camembert rántva áfonyával;liszt;20
+Camembert rántva áfonyával;zsemlemorzsa;40
+Camembert rántva áfonyával;áfonya lekvár;50
+Fish and Chips;tőkehalfilé;200
+Fish and Chips;liszt;50
+Fish and Chips;sör;50
+Fish and Chips;burgonya;250
+Fish and Chips;remoulade mártás;40
+Bélszínsteak mártással;marhabélszín;220
+Bélszínsteak mártással;vaj;20
+Bélszínsteak mártással;rozmaring;2
+Bélszínsteak mártással;tejszín;50
+Bélszínsteak mártással;zöldbors;5
+Szarvaspörkölt;szarvas comb;200
+Szarvaspörkölt;vöröshagyma;100
+Szarvaspörkölt;vörösbor;100
+Szarvaspörkölt;áfonya;20
+Szarvaspörkölt;borókabogyó;2
+Szarvaspörkölt;zsír;30
