@@ -1,169 +1,173 @@
+Alapanyag;Mennyiség
 liszt;50000
 víz;100000
 élesztő;500
-só;2000
-olívaolaj;5000
-paradicsomszósz;15000
-mozzarella;8000
-bazsalikom;300
-sonka;4000
-gomba;3000
-articsóka;1500
-fekete olajbogyó;1200
-gorgonzola;1500
-parmezán;2000
-ementáli;2500
-kolbász;3500
-bacon;4000
-lilahagyma;5000
-erős paprika;1000
-ananász;2500
-csípős szalámi;3000
-chili pehely;200
-kukorica;4000
-szalámi;3000
-darált hús;10000
-borsó;3000
-kápia paprika;2000
-bolognai ragu;5000
-feta sajt;2500
-paradicsom szelet;3000
-oregano;200
-vörösbab;2500
-jalapeno;800
-tenger gyümölcsei mix;4000
-fokhagyma;2000
-citrom;1500
-BBQ szósz;3000
-sült csirkemell;6000
-gnocchi tészta;5000
-főzőtejszín;10000
-trappista sajt;7000
-füstölt sajt;2500
-fehérbors;150
-spagetti;10000
-vöröshagyma;15000
-tojássárgája;100
-tejszín;8000
-feketebors;300
-lasagne tészta;3000
-darált marhahús;8000
-tej;15000
-vaj;4000
-penne;6000
-bazsalikom pesto;2000
-fenyőmag;500
-marha lábszár;12000
-sárgarépa;8000
-fehérrépa;5000
-zeller;3000
-levesbetét tészta;4000
-szemesbors;200
-burgonya;60000
-fűszerpaprika;2500
-zsír;8000
-kömény;200
-alaplé;20000
-pirított kenyérkocka;2000
-meggy;4000
-alma;5000
-szilva;4000
-szegfűszeg;100
-cukor;10000
-paradicsomlé;15000
-betűtészta;2000
-szárazbab;6000
-füstölt csülök;5000
-debreceni kolbász;3000
-tejföl;12000
-ecet;3000
-csirkemell;15000
-vegyes zöldség;8000
-tárkony;200
-citromlé;2000
-tojás;200
-zsemlemorzsa;10000
-olaj;20000
-sertéskaraj;10000
-rizs;15000
-panírmorzsa;5000
-sertés tarja;8000
-szalonna;5000
-sertéscomb;10000
-marhahús;12000
-mustár;2000
-zsemlegombóc;4000
-juhtúró;4000
-füstölt szalonna;4000
-csusza tészta;6000
-túró;8000
-tepertő;2000
-paradicsom;10000
-uborka;8000
-kaliforniai paprika;4000
+só;5000
+olívaolaj;10000
+paradicsomszósz;20000
+mozzarella;15000
+bazsalikom;500
+sonka;8000
+gomba;5000
+articsóka;2000
+fekete olajbogyó;1500
+gorgonzola;2000
+parmezán;3000
+ementáli;3000
+kolbász;5000
+bacon;6000
+lilahagyma;10000
+erős paprika;2000
+ananász;3000
+csípős szalámi;4000
+chili pehely;500
+kukorica;5000
+szalámi;4000
+darált hús;15000
+zöldségmix;10000
+bolognai ragu;10000
+feta sajt;4000
 olíva bogyó;2000
-római saláta;5000
-kenyérkocka;2000
-anchovi;500
-majonéz;4000
-vegyes saláta;4000
-tonhal;3000
-kígyóuborka;5000
-savanyított uborka;4000
-töltött paprika;3000
-piskóta;5000
-dió;4000
-mazsola;2000
-rum;1000
-csokiöntet;4000
-tejszínhab;5000
-mascarpone;4000
-babapiskóta;3000
-kávé;5000
-kakaópor;2000
-gesztenyemassza;5000
-porcukor;4000
-rumaroma;300
-réteslap;2000
-vaj;5000
-cukorszirup;5000
-méz;3000
-keksz;3000
-krémsajt;6000
-vanília;200
-étcsokoládé;4000
-vaníliafagylalt;5000
-marhalábszár;10000
-nokedli;8000
-savanyú káposzta;10000
-sertéslapocka;8000
-káposztalevél;200
-vágott káposzta;5000
-darált sertéshús;8000
-sós palacsinta;100
-pörkölt hús;5000
-paprika mártás;4000
-kacsacomb;50
-lila káposzta;6000
-lazacfilé;5000
-bébispenót;2000
-koktélparadicsom;3000
-csiperkegomba;5000
-tartármártás;3000
-karfiol;6000
-bélszín;5000
-kapribogyó;1000
-pirítós;200
-baguett;50
-camembert sajt;3000
-áfonya lekvár;3000
-tőkehalfilé;6000
-sör;5000
-remoulade mártás;3000
-marhabélszín;6000
-rozmaring;200
-zöldbors;300
-szarvas comb;8000
-vörösbor;10000
-áfonya;2000
-borókabogyó;100
+paradicsom szelet;3000
+oregano;300
+vörösbab;4000
+jalapeno;1000
+tenger gyümölcsei mix;5000
+fokhagyma;3000
+citrom;2000
+BBQ szósz;4000
+sült csirkemell;10000
+gnocchi tészta;8000
+főzőtejszín;15000
+trappista sajt;10000
+füstölt sajt;3000
+fehérbors;200
+spagetti;15000
+vöröshagyma;20000
+tojássárgája;200
+tejszín;12000
+feketebors;500
+lasagne tészta;5000
+darált marhahús;10000
+tej;20000
+vaj;6000
+penne;10000
+bazsalikom pesto;3000
+fenyőmag;500
+marha lábszár;15000
+sárgarépa;10000
+fehérrépa;7000
+zeller;4000
+levesbetét tészta;5000
+szemesbors;300
+burgonya;100000
+fűszerpaprika;3000
+zsír;10000
+kömény;300
+alaplé;30000
+pirított kenyérkocka;3000
+meggy;5000
+alma;6000
+szilva;5000
+szegfűszeg;100
+cukor;15000
+paradicsomlé;20000
+betűtészta;3000
+szárazbab;8000
+füstölt csülök;6000
+debreceni kolbász;4000
+tejföl;15000
+ecet;5000
+csirkemell;20000
+vegyes zöldség;10000
+tárkony;200
+citromlé;3000
+tojás;500
+zsemlemorzsa;15000
+olaj;30000
+sertéskaraj;15000
+rizs;20000
+borsó;5000
+panírmorzsa;10000
+sertés tarja;10000
+szalonna;8000
+sertéscomb;15000
+marhahús;15000
+mustár;3000
+zsemlegombóc;5000
+juhtúró;5000
+füstölt szalonna;6000
+csusza tészta;10000
+túró;12000
+tepertő;3000
+paradicsom;15000
+uborka;12000
+kaliforniai paprika;6000
+római saláta;8000
+kenyérkocka;3000
+anchovi;400
+majonéz;5000
+vegyes saláta;6000
+tonhal;4000
+kígyóuborka;8000
+savanyított uborka;5000
+töltött paprika;4000
+piskóta;8000
+dió;5000
+mazsola;3000
+rum;2000
+csokiöntet;6000
+tejszínhab;8000
+mascarpone;6000
+babapiskóta;5000
+kávé;8000
+kakaópor;3000
+gesztenyemassza;8000
+porcukor;5000
+rumaroma;500
+réteslap;3000
+cukorszirup;8000
+méz;4000
+keksz;4000
+krémsajt;8000
+vanília;300
+étcsokoládé;6000
+vaníliafagylalt;8000
+marhalábszár;12000
+nokedli;10000
+savanyú káposzta;15000
+sertéslapocka;12000
+káposztalevél;500
+vágott káposzta;8000
+darált sertéshús;12000
+sós palacsinta;200
+pörkölt hús;8000
+paprika mártás;6000
+kacsacomb;100
+lila káposzta;10000
+lazacfilé;8000
+bébispenót;3000
+koktélparadicsom;5000
+csiperkegomba;8000
+tartármártás;5000
+karfiol;8000
+bélszín;8000
+kapribogyó;1500
+pirítós;500
+baguett;100
+camembert sajt;5000
+áfonya lekvár;5000
+tőkehalfilé;8000
+sör;8000
+remoulade mártás;4000
+marhabélszín;8000
+rozmaring;300
+zöldbors;500
+szarvas comb;10000
+vörösbor;15000
+áfonya;3000
+borókabogyó;200
+palacsintatészta;200
+diótöltelék;5000
+túrótöltelék;5000
+idény zöldségek;10000
