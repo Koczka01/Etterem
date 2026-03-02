@@ -4,6 +4,6 @@ tables = []
 
 for i in range(tables_number):
     add = []
-    tables.append(lo_siento)
+    tables.append(add)
 
 print(tables)
