@@ -15,17 +15,21 @@ with open('recept.csv', encoding='utf8') as file:
     read = read.strip().split(';')
     recipe = []
     recipe.append(Recipe(read[0]))
-    recipe
-    print(recipe[0].name)
+    recipe[-1].material.append(read[1])
+    recipe[-1].amount.append(read[2])
     for i in file:
+        i = i.strip().split(';')
         if i[0] != recipe[-1].name:
             recipe.append(Recipe(i[0]))
+        
+        recipe[-1].material.append(i[1])
+        recipe[-1].amount.append(i[2])
 
 with open('raktar.csv', encoding='utf8') as file:
     storage = []
     for i in file:
         storage.append(i.strip().split(';'))
 
-print(menu)
-print(recipe)
-print(storage)
+#print(menu)
+print(recipe[1].material)
+#print(storage)
