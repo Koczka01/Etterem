@@ -1,35 +1,23 @@
-#Wilson! Lo siento!
-class Recipe():
-    def __init__(self, name):
-        self.name = name
-        self.material = []
-        self.amount = []
-    
-with open('menu.csv', encoding='utf8') as file:
-    menu = []
-    for i in file:
-        menu.append(i.strip().split(';'))
+#I've become so numb
+import read_files
 
-with open('recept.csv', encoding='utf8') as file:
-    read = file.readline()
-    read = read.strip().split(';')
-    recipe = []
-    recipe.append(Recipe(read[0]))
-    recipe[-1].material.append(read[1])
-    recipe[-1].amount.append(read[2])
-    for i in file:
-        i = i.strip().split(';')
-        if i[0] != recipe[-1].name:
-            recipe.append(Recipe(i[0]))
-        
-        recipe[-1].material.append(i[1])
-        recipe[-1].amount.append(i[2])
+table_count = int(input('Adja meg hány asztal van: '))
 
-with open('raktar.csv', encoding='utf8') as file:
-    storage = []
-    for i in file:
-        storage.append(i.strip().split(';'))
+class table:
+    def __init__(self) -> None:
+        self.orders = []
 
-#print(menu)
-print(recipe[1].material)
-#print(storage)
+tables = [table()]*table_count
+
+action = input('írd be, hogy new_recipe: ')
+while action != '':
+    if action == 'new_recipe':
+        read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
+        material = input('Adjon meg egy alapanyagot: ')
+        while material != '':
+            read_files.recipe[-1].material.append(material)
+            material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
+
+    action = input('Nyomj egy entert: ')
+
+print(read_files.recipe[-1].material)
