@@ -28,7 +28,9 @@ with open('recept.csv', encoding='utf8') as file:
 with open('raktar.csv', encoding='utf8') as file:
     storage = []
     for i in file:
-        storage.append(i.strip().split(';'))
+        i = i.strip().split(';')
+        i[1] = int(i[1])
+        storage.append(i)
 
 #print(menu)
 #print(recipe[1].material)

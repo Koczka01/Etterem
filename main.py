@@ -38,13 +38,11 @@ while action != '':
             i += 1 
         
         if i < len(read_files.storage):
-            read_files.storage[i][0] += int(input("Kérlek add meg, hogy mennyi szeretnél hozzá adni: "))
+            read_files.storage[i][1] += int(input("Kérlek add meg, hogy mennyi szeretnél hozzá adni: "))
         else:
             print("Rossz alapanyagot adtál meg!")
         
         write_files.storage_all(read_files.storage)
         
 
-    action = input('Nyomj egy entert: ')    
-
-print(read_files.recipe[-1].amount)
+    action = input('Nyomj egy entert: ')

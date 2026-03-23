@@ -11,8 +11,9 @@ def storage(name):
         file.close()
 
 def storage_all(white_monster):
-    file = open('raktar.csv', 'a', encoding='utf8')
-    file.writelines(white_monster)
+    file = open('raktar.csv', 'w', encoding='utf8')
+    for i in white_monster:
+        file.write(f'{i[0]};{i[1]}\n')
 
 def menu(menu):
     file = open("menu.csv", 'a', encoding= 'UTF-8')
