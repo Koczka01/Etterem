@@ -34,9 +34,16 @@ while action != '':
     if action == "Storage_load":
         i = 0
         m = input("kérem adja meg, hogy mit szeretne feltölteni: ")
-        while i < len(read_files.storage) and m == read_files.storage[i][0]:
-            read_files.storage.append(read_files.Recipe(input("Kérlek add meg, hogy mennyi szeretnél hozzá adni: ")))
-            i += 1
+        while i < len(read_files.storage) and m != read_files.storage[i][0]:
+            i += 1 
+        
+        if i < len(read_files.storage):
+            read_files.storage[i][0] += int(input("Kérlek add meg, hogy mennyi szeretnél hozzá adni: "))
+        else:
+            print("Rossz alapanyagot adtál meg!")
+        
+        write_files.storage_all(read_files.storage)
+        
 
     action = input('Nyomj egy entert: ')    
 

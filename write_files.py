@@ -9,7 +9,11 @@ def storage(name):
         file = open('raktar.csv', 'a', encoding='utf8')
         file.write(f'\n{name};0')
         file.close()
-        
+
+def storage_all(white_monster):
+    file = open('raktar.csv', 'a', encoding='utf8')
+    file.writelines(white_monster)
+
 def menu(menu):
     file = open("menu.csv", 'a', encoding= 'UTF-8')
     file.write(f'\n{menu};{input("Kérlek adj meg egy árat: ")}')
