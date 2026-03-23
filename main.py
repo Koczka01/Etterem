@@ -26,7 +26,9 @@ while action != '':
                 write_files.storage(material)
 
             material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
-    
+
+    write_files.menu(read_files.recipe[-1].name)
+
     write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
 
     action = input('Nyomj egy entert: ')
