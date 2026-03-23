@@ -18,6 +18,13 @@ while action != '':
         while material != '':
             read_files.recipe[-1].material.append(material) 
             read_files.recipe[-1].amount.append(int(input("Kérlek add meg az alapanyag mennyiségét: ")))
+            i = 0
+            while i < len(read_files.storage) and read_files.storage[i][0] != material:
+                i += 1
+
+            if i == len(read_files.storage):
+                write_files.storage(material)
+
             material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
     
     write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
