@@ -19,3 +19,8 @@ def menu(menu):
     file = open("menu.csv", 'a', encoding= 'UTF-8')
     file.write(f'\n{menu};{input("Kérlek adj meg egy árat: ")}')
     file.close
+
+def menu_delete(dominik):
+    file = open("menu.csv", 'w', encoding='UTF-8')
+    for i in dominik:
+        file.write(f"")

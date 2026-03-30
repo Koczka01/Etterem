@@ -10,7 +10,7 @@ class table:
 
 tables = [table()]*table_count
 
-action = input('írd be, hogy new_recipe vagy Storage_load: ')
+action = input('írd be, hogy new_recipe vagy Storage_load vagy Order vagy Menu element delete: ')
 while action != '':
     if action == 'new_recipe':
         read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
@@ -44,5 +44,31 @@ while action != '':
         
         write_files.storage_all(read_files.storage)
         
+    if action == "Order":
+        i = 0
+        which = int(input("Melyik asztalhoz ment a pincér: "))
+        o = input("Kérem adja meg a rendelését: ")
+        o = o.strip()
+        while o != "":
+            while i < len(read_files.menu):
+                if o == read_files.menu[i][0]:
+                    tables[which].orders.append(o)
+                i += 1
+
+            if i != len(read_files.menu):
+                print("Bocs haver ilyet nem esszel")
+            
+            o = input("Kérem adjon meg még egy alapanyagot, ha nem szeretne akkor nyomjon egy entert: ")
+            o = o.strip()
+
+    if action == "Menu element delete":
+        i = 0
+        delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
+        while i < len(read_files.menu):
+            if delete == read_files.menu[i][0]:
+                read_files.menu[i].pop
+            i += 1
+        
+        delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
 
     action = input('Nyomj egy entert: ')
