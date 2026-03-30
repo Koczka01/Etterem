@@ -64,11 +64,11 @@ while action != '':
     if action == "Menu element delete":
         i = 0
         delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
-        while delete == "":
-            while i < len(read_files.menu):
-                if delete == read_files.menu[i][0]:
-                    read_files.menu[i] -= delete
-                i += 1
-            write_files.menu_delete(delete)
+        while i < len(read_files.menu):
+            if delete == read_files.menu[i][0]:
+                read_files.menu[i].pop
+            i += 1
+        
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
+
     action = input('Nyomj egy entert: ')
