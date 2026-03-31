@@ -59,6 +59,7 @@ while action != '':
                         tables[which].orders.append(o)
                         logic = True
                         write_files.storage_minus(read_files.storage, o)
+                        
                         break
                     i += 1
 
