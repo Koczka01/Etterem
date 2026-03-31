@@ -1,9 +1,12 @@
 #I've become so numb
 import read_files
 import write_files
+import random
 
 table_count = int(input('Adja meg hány asztal van: '))
 name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
+veletlen = random.choice(name)
+etelek = []
 
 class table:
     def __init__(self) -> None:
@@ -49,6 +52,7 @@ while action != '':
         there_is_a_table = True
         while there_is_a_table:
             which = int(input("Melyik asztalhoz ment a pincér: "))
+            waiter = input("Ki lesz a pincér: ")
             o = input("Kérem adja meg a rendelését: ")
             o = o.strip()
             while o != "":
@@ -59,13 +63,14 @@ while action != '':
                         tables[which].orders.append(o)
                         logic = True
                         write_files.storage_minus(read_files.storage, o)
-                        
+                        etelek.append(o)
                         break
                     i += 1
 
                 if logic == False:
                     print("Bocs haver ilyet nem esszel")
 
+                write_files.pay(read_files.menu, etelek, which)
 
                 o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
                 o = o.strip()
