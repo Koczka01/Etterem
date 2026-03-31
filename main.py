@@ -75,7 +75,9 @@ while action != '':
         while i < len(read_files.menu):
             if delete == read_files.menu[i][0]:
                 read_files.menu[i].pop
+                read_files.storage[i].pop
                 write_files.menu_delete(read_files.menu, delete)
+                write_files.storage_delete(read_files.storage, delete)
             i += 1
         
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")

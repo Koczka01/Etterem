@@ -26,3 +26,10 @@ def menu_delete(menu_list, target_name):
         for item in new_menu:
             file.write(f'{item[0]};{item[1]}\n')
     return new_menu
+
+def storage_delete(storage_list, name):
+    new_storage = [item for item in storage_list if item[0] != name]
+    with open("recept.csv", 'w', encoding= 'utf-8') as file:
+        for item in new_storage:
+            file.write(f'{item[0]};{item[1]}\n')
+    return new_storage
