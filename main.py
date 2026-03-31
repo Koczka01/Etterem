@@ -3,6 +3,7 @@ import read_files
 import write_files
 
 table_count = int(input('Adja meg hány asztal van: '))
+name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
 
 class table:
     def __init__(self) -> None:
