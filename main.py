@@ -45,21 +45,29 @@ while action != '':
         write_files.storage_all(read_files.storage)
         
     if action == "Order":
-        i = 0
-        which = int(input("Melyik asztalhoz ment a pincér: "))
-        o = input("Kérem adja meg a rendelését: ")
-        o = o.strip()
-        while o != "":
-            while i < len(read_files.menu):
-                if o == read_files.menu[i][0]:
-                    tables[which].orders.append(o)
-                i += 1
-
-            if i != len(read_files.menu):
-                print("Bocs haver ilyet nem esszel")
-            
-            o = input("Kérem adjon meg még egy alapanyagot, ha nem szeretne akkor nyomjon egy entert: ")
+        there_is_a_table = True
+        while there_is_a_table:
+            which = int(input("Melyik asztalhoz ment a pincér: "))
+            o = input("Kérem adja meg a rendelését: ")
             o = o.strip()
+            while o != "":
+                i = 0
+                logic = False
+                while i < len(read_files.menu):
+                    if o == read_files.menu[i][0]:
+                        tables[which].orders.append(o)
+                        logic = True
+                        break
+                    i += 1
+
+                if logic == False:
+                    print("Bocs haver ilyet nem esszel")
+            
+                o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
+                o = o.strip()
+            further = input("Szeretnél másik asztaltól is rendelést felvenni? (Y/N): ")
+            if further != "Y":
+                there_is_a_table = False
 
     if action == "Menu element delete":
         i = 0
@@ -67,6 +75,7 @@ while action != '':
         while i < len(read_files.menu):
             if delete == read_files.menu[i][0]:
                 read_files.menu[i].pop
+                write_files.menu_delete(read_files.menu, delete)
             i += 1
         
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
