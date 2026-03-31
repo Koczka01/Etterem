@@ -1,4 +1,5 @@
 import read_files
+import main
 
 def recipe(name, material, amount):
     file = open("recept.csv", 'a', encoding="UTF-8")
@@ -65,15 +66,11 @@ def storage_minus(storage, amount):
 
     return storage
 
-def pay(fizet, name, sorszam):
-    file = open("vasarlasok.csv", "a", encoding="UTF-8")
-    ar = 0
-    n = 0
-    for i in range(len(name)):
-        while n < len(read_files.menu):
-            if name[i] ==  read_files.menu[n][0]:
-                ar += int(read_files.menu[n][1])
-            n += 1
-    
-    file.write(f"{sorszam} sorszámű asztal rendelései:{name}; és az végösszeg: {ar}")
-    file.close
+def pay():    
+    with open("vasarlasok.csv", "w", encoding="UTF-8") as file:
+        for i in range(len(main.tables)):
+            if len(main.tables[i].orders) > 0:
+                file.write(f"{i};")
+                for j in range(len(main.tables[i].orders)):
+                    file.write(f"{main.tables[i].order_count[j]};{main.tables[i].orders[j]};")
+                file.write(f"{main.tables[i].price}")

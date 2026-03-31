@@ -32,6 +32,12 @@ with open('raktar.csv', encoding='utf8') as file:
         i[1] = int(i[1])
         storage.append(i)
 
+with open("vasarlasok.csv", encoding="utf-8") as file:
+    vasarlasok = []
+    for i in file:
+        i = i.strip().split(';')
+        vasarlasok.append(i)
+    
 #print(menu)
 #print(recipe[1].material)
 #print(storage)

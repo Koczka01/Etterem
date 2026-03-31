@@ -11,6 +11,8 @@ etelek = []
 class table:
     def __init__(self) -> None:
         self.orders = []
+        self.order_count = []
+        self.price = 0
 
 tables = [table()]*table_count
 
@@ -60,17 +62,30 @@ while action != '':
                 logic = False
                 while i < len(read_files.menu):
                     if o == read_files.menu[i][0]:
-                        tables[which].orders.append(o)
+                        j = 0
+                        while j < len(tables[which].orders) and o != tables[which].orders[j]:
+                            j += 1
+                        
+                        if j < len(tables[which].orders):
+                            tables[which].order_count[j] += 1
+                        else:
+                            tables[which].orders.append(o)
+                            tables[which].order_count.append(1)
+                        
+                        tables[which].price += int(read_files.menu[i][1])
+
                         logic = True
+                        '''
                         write_files.storage_minus(read_files.storage, o)
                         etelek.append(o)
+                        '''
                         break
                     i += 1
 
                 if logic == False:
                     print("Bocs haver ilyet nem esszel")
 
-                write_files.pay(read_files.menu, etelek, which)
+                write_files.pay()
 
                 o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
                 o = o.strip()
