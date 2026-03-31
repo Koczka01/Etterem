@@ -33,3 +33,32 @@ def storage_delete(storage_list, name):
         for item in new_storage:
             file.write(f'{item[0]};{item[1]}\n')
     return new_storage
+
+def storage_minus(storage, amount):
+    hozzavalok = []
+    with open("recept.csv", "r", encoding="UTF-8") as f:
+        for sor in f:
+            adat = sor.strip().split(";")
+            if adat[0] == amount:
+                hozzavalok.append([adat[1], int(adat[2])])
+
+    raktar_sorok = []
+    with open("raktar.csv", "r", encoding="UTF-8") as f:
+        for sor in f:
+            raktar_sorok.append(sor.strip().split(";"))
+
+    for recept_elem in hozzavalok:
+        nev = recept_elem[0]
+        mennyiseg = recept_elem[1]
+
+        for i in range(len(raktar_sorok)):
+            if raktar_sorok[i][0] == nev:
+                aktualis_keszlet = int(raktar_sorok[i][1])
+                uj_keszlet = aktualis_keszlet - mennyiseg
+                raktar_sorok[i][1] = str(uj_keszlet)
+    
+    with open("raktar.csv", "w", encoding= "UTF-8") as f:
+        for sor in raktar_sorok:
+            f.write(f'{sor[0]};{sor[1]}\n')
+
+    return storage

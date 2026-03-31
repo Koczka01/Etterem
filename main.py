@@ -57,12 +57,14 @@ while action != '':
                     if o == read_files.menu[i][0]:
                         tables[which].orders.append(o)
                         logic = True
+                        write_files.storage_minus(read_files.storage, o)
                         break
                     i += 1
 
                 if logic == False:
                     print("Bocs haver ilyet nem esszel")
-            
+
+
                 o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
                 o = o.strip()
             further = input("Szeretnél másik asztaltól is rendelést felvenni? (Y/N): ")
