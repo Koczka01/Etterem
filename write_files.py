@@ -1,5 +1,5 @@
 import read_files
-import main
+
 
 def recipe(name, material, amount):
     file = open("recept.csv", 'a', encoding="UTF-8")
@@ -66,11 +66,27 @@ def storage_minus(storage, amount):
 
     return storage
 
-def pay():    
+def pay(tables, which, price):
+    try:
+        with open("vasarlasok.csv", "r", encoding="UTF-8") as file:
+            sorok = file.readlines()
+    except FileNotFoundError:
+        sorok = []
+
+    uj_sor = f"{which};"
+    for j in range(len(tables[which].orders)):
+        uj_sor += f"{tables[which].order_count[j]};{tables[which].orders[j]}"
+    uj_sor += f"{tables[which].price}\n"
+
+    talalt = False
+    for i in range(len(sorok)):
+        if sorok[i].startswith(f"{which};"):
+            sorok[i] = uj_sor
+            talalt = True
+            break
+    
+    if talalt == True:
+        sorok.append(uj_sor)
+
     with open("vasarlasok.csv", "w", encoding="UTF-8") as file:
-        for i in range(len(main.tables)):
-            if len(main.tables[i].orders) > 0:
-                file.write(f"{i};")
-                for j in range(len(main.tables[i].orders)):
-                    file.write(f"{main.tables[i].order_count[j]};{main.tables[i].orders[j]};")
-                file.write(f"{main.tables[i].price}")
+        file.writelines(sorok)

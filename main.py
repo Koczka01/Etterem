@@ -14,7 +14,7 @@ class table:
         self.order_count = []
         self.price = 0
 
-tables = [table()]*table_count
+tables = [table() for _ in range(table_count)]
 
 action = input('írd be, hogy new_recipe vagy Storage_load vagy Order vagy Menu element delete: ')
 while action != '':
@@ -75,17 +75,18 @@ while action != '':
                         tables[which].price += int(read_files.menu[i][1])
 
                         logic = True
-                        '''
+
+                        
                         write_files.storage_minus(read_files.storage, o)
                         etelek.append(o)
-                        '''
+                        
                         break
                     i += 1
 
                 if logic == False:
                     print("Bocs haver ilyet nem esszel")
 
-                write_files.pay()
+                write_files.pay(tables, which, tables[which].price)
 
                 o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
                 o = o.strip()
