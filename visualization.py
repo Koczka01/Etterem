@@ -1,26 +1,29 @@
 import os
 from pynput import keyboard
-from pynput.keyboard import Key
 from termcolor import colored
 import read_files
 import write_files
-
+import msvcrt
+import time
+import main
 
 def on_key_release(key):
-    global selected
-    global options
+    global selected, options, doit, enter
     if key == keyboard.Key.down and selected < len(options)-1:
         selected += 1
+        return False
     elif key == keyboard.Key.up and selected > 0:
         selected -= 1
+        return False
     elif selected == len(options)-1 and key == keyboard.Key.enter:
-        global enter
         enter = True
+        doit = True
+        return False
     elif key == keyboard.Key.enter:
-        eval(options[selected])
-    exit()
+        doit = True
+        return False
 
-def new_recipe():
+'''def new_recipe():
     os.system('cls')
     read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
     material = input('Adjon meg egy alapanyagot: ')
@@ -38,17 +41,10 @@ def new_recipe():
 
     write_files.menu(read_files.recipe[-1].name)
 
-    write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
+    write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)'''
 
-
-def Storage_load():
-    pass
-
-def Finish_run():
-    pass
-
-options = ['new_recipe()', 'storage_load()', 'finish_run()']
-optionsshow = ['Új étel hozzáadása', 'Raktár töltése', 'Bezárás']
+options = ['main.Order()', 'main.Storage_load()', 'main.New_recipe()', 'main.Menu_element_delete()', 'exit()']
+optionsshow = ['Rendelés hozzáadása', 'Raktár töltése', 'Új étel hozzáadása', 'Étel törlése', 'Bezárás']
 longest = len(optionsshow[0])
 for i in optionsshow:
     if len(i) > longest:
@@ -57,6 +53,7 @@ selected = 0
 longest += 8
 
 enter = False
+doit = False
 
 while not(enter):
     os.system('cls')
@@ -71,3 +68,11 @@ while not(enter):
     with keyboard.Listener(on_release=on_key_release) as listener:
         listener.join()
     os.system('cls')
+
+    if doit:
+        while msvcrt.kbhit():
+            msvcrt.getch()
+
+        eval(options[selected])
+        doit = False
+        time.sleep(0.2)
