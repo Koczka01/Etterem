@@ -4,8 +4,7 @@ import write_files
 import random
 
 table_count = int(input('Adja meg hány asztal van: '))
-name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
-veletlen = random.choice(name)
+
 etelek = []
 
 class table:
@@ -13,6 +12,8 @@ class table:
         self.orders = []
         self.order_count = []
         self.price = 0
+        self.waiter = ""
+        self.guest = ""
 
 tables = [table() for _ in range(table_count)]
 
@@ -54,7 +55,9 @@ while action != '':
         there_is_a_table = True
         while there_is_a_table:
             which = int(input("Melyik asztalhoz ment a pincér: "))
-            waiter = input("Ki lesz a pincér: ")
+            tables[which].waiter = input("Ki lesz a pincér: ")
+            name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
+            tables[which].guest = random.choice(name)
             o = input("Kérem adja meg a rendelését: ")
             o = o.strip()
             while o != "":
@@ -94,6 +97,10 @@ while action != '':
             if further != "Y":
                 there_is_a_table = False
 
+        end = input("Ennyi az összes rendelás? Y/N: ")
+        if end == "Y":
+            write_files.Conludes(tables)
+
     if action == "Menu element delete":
         i = 0
         delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
@@ -102,7 +109,7 @@ while action != '':
                 read_files.menu[i].pop
                 read_files.storage[i].pop
                 write_files.menu_delete(read_files.menu, delete)
-                write_files.storage_delete(read_files.storage, delete)
+                write_files.storage_delete(read_files.recipe, delete)
             i += 1
         
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")

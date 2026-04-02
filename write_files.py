@@ -76,7 +76,7 @@ def pay(tables, which, price):
     uj_sor = f"{which};"
     for j in range(len(tables[which].orders)):
         uj_sor += f"{tables[which].order_count[j]};{tables[which].orders[j]}"
-    uj_sor += f"{tables[which].price}\n"
+    uj_sor += f"{ tables[which].price}\n"
 
     talalt = False
     for i in range(len(sorok)):
@@ -85,8 +85,18 @@ def pay(tables, which, price):
             talalt = True
             break
     
-    if talalt == True:
+    if talalt == False:
         sorok.append(uj_sor)
 
     with open("vasarlasok.csv", "w", encoding="UTF-8") as file:
         file.writelines(sorok)
+    
+
+def Conludes(tables):
+    with open("lezart_rendeles.csv", "a", encoding="UTF-8") as file:
+        for which in range(len(tables)):
+            if len(tables[which].orders) > 0:
+                rendeles = ""
+                for i in range(len(tables[which].orders)):
+                    rendeles += f"{tables[which].order_count[i]}db {tables[which].orders[i]}, "
+                file.write(f"A {which} számú asztal vendége: {tables[which].guest}, felszolgálója: {tables[which].waiter}. Rendelés(ek): {rendeles}végösszeg: {tables[which].price}\n")
