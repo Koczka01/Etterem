@@ -1,3 +1,5 @@
+#I've become so numb
+
 table_count = int(input('Adja meg hány asztal van: '))
 
 etelek = []
@@ -14,7 +16,6 @@ tables = []
 for i in range(table_count):
     tables.append(table())
 
-#I've become so numb
 import read_files
 import write_files
 import random
@@ -23,23 +24,32 @@ import time
 time.sleep(0.2)
 
 def New_recipe():
-    read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
-    material = input('Adjon meg egy alapanyagot: ')
-    while material != '':
-        read_files.recipe[-1].material.append(material) 
-        read_files.recipe[-1].amount.append(int(input("Kérlek add meg az alapanyag mennyiségét: ")))
-        i = 0
-        while i < len(read_files.storage) and read_files.storage[i][0] != material:
-            i += 1
+    name = input('Add meg a nevét a kajának: ')
+    if name != '':
+        read_files.recipe.append(read_files.Recipe(name))
+        material = input('Adjon meg egy alapanyagot: ')
+        amount = input("Kérlek add meg az alapanyag mennyiségét: ")
+        while material != '':
+            if amount.isnumeric() and amount != '':
+                read_files.recipe[-1].material.append(material) 
+                read_files.recipe[-1].amount.append(int(amount))
+                i = 0
+                while i < len(read_files.storage) and read_files.storage[i][0] != material:
+                    i += 1
 
-        if i == len(read_files.storage):
-            write_files.storage(material)
+                if i == len(read_files.storage):
+                    write_files.storage(material)
 
-        material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
+            material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
+            amount = input("Kérlek add meg az alapanyag mennyiségét: ")
 
-    write_files.menu(read_files.recipe[-1].name)
-
-    write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
+        price = input("Kérlek adj meg egy árat: ")
+        if price.isnumeric() and price != '':
+            write_files.menu(read_files.recipe[-1].name, price)
+            read_files.menu.append([name, price])
+            write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
+        else:
+            read_files.recipe.pop(-1)
 
 def Storage_load():
     i = 0
@@ -69,6 +79,15 @@ def Order():
             logic = False
             while i < len(read_files.menu):
                 if o == read_files.menu[i][0]:
+                    k = 0
+                    while o != read_files.recipe[k].name:
+                        k += 1
+                    for l in range(len(read_files.recipe[k].material)):
+                        for m in read_files.storage:
+                            if read_files.recipe[k].material[l] == m[0]:
+                                if read_files.recipe[k].amount[l] > m[1]:
+                                    logic = False
+
                     j = 0
                     while j < len(tables[which].orders) and o != tables[which].orders[j]:
                         j += 1
@@ -113,22 +132,6 @@ def Order_finish():
         tables[int(which)].guest = ""
         write_files.Update_orders(tables)
 
-                        
-    '''
-    if action == "Menu element delete":
-        i = 0
-        delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
-        while i < len(read_files.menu):
-            if delete == read_files.menu[i][0]:
-                write_files.menu_delete(read_files.menu, delete)
-                write_files.recipe_delete(read_files.recipe, delete)
-                write_files.storage_delete(read_files.recipe, read_files.storage, delete)
-            i += 1
-        
-        delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
-
-    action = input('Nyomj egy entert: ') 
-    '''  
 def Menu_element_delete():
     '''
     i = 0

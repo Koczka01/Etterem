@@ -40,11 +40,7 @@ with open("vasarlasok.csv", encoding="utf-8") as file:
         i = i.strip().split(';')
         for j in range(3, len(i)-1, 2):
             main.tables[int(i[0])].orders = [i[j+1]]
-            main.tables[int(i[0])].order_count = [i[j]]
+            main.tables[int(i[0])].order_count = [int(i[j])]
         main.tables[int(i[0])].price = int(i[-1])
         main.tables[int(i[0])].waiter = i[1]
         main.tables[int(i[0])].guest = i[2]
-    
-#print(menu)
-#print(recipe[1].material)
-#print(storage)
