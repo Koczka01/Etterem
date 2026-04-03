@@ -109,16 +109,16 @@ def storage_minus(storage, amount):
 
     return storage
 
-def pay(tables, which, price):
+def pay(tables, which):
     try:
         with open("vasarlasok.csv", "r", encoding="UTF-8") as file:
             sorok = file.readlines()
     except FileNotFoundError:
         sorok = []
 
-    uj_sor = f"{which};"
+    uj_sor = f"{which};{tables[which].guest};{tables[which].waiter};"
     for j in range(len(tables[which].orders)):
-        uj_sor += f"{tables[which].order_count[j]};{tables[which].orders[j]}"
+        uj_sor += f"{tables[which].order_count[j]};{tables[which].orders[j]};"
     uj_sor += f"{ tables[which].price}\n"
 
     talalt = False
@@ -133,13 +133,21 @@ def pay(tables, which, price):
 
     with open("vasarlasok.csv", "w", encoding="UTF-8") as file:
         file.writelines(sorok)
-    
 
-def Conludes(tables):
+def Update_orders(tables):
+    file = open('vasarlasok.csv', 'w', encoding='utf8')
+    for i in range(len(tables)):
+        if tables[i].orders != []:
+            uj_sor = f"{i};{tables[i].guest};{tables[i].waiter};"
+            for j in range(len(tables[i].orders)):
+                uj_sor += f"{tables[i].order_count[j]};{tables[i].orders[j]};"
+            uj_sor += f"{ tables[i].price}\n"
+            file.write(uj_sor)
+
+def Conludes(table, which):
     with open("lezart_rendeles.csv", "a", encoding="UTF-8") as file:
-        for which in range(len(tables)):
-            if len(tables[which].orders) > 0:
-                rendeles = ""
-                for i in range(len(tables[which].orders)):
-                    rendeles += f"{tables[which].order_count[i]}db {tables[which].orders[i]}, "
-                file.write(f"A {which} számú asztal vendége: {tables[which].guest}, felszolgálója: {tables[which].waiter}. Rendelés(ek): {rendeles}végösszeg: {tables[which].price}\n")
+        if len(table.orders) > 0:
+            rendeles = ""
+            for i in range(len(table.orders)):
+                rendeles += f"{table.order_count[i]}db {table.orders[i]}, "
+            file.write(f"A {which} számú asztal vendége: {table.guest}, felszolgálója: {table.waiter}. Rendelés: {rendeles}végösszeg: {table.price}\n")

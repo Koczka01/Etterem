@@ -1,8 +1,3 @@
-#I've become so numb
-import read_files
-import write_files
-import random
-
 table_count = int(input('Adja meg hány asztal van: '))
 
 etelek = []
@@ -19,89 +14,106 @@ tables = []
 for i in range(table_count):
     tables.append(table())
 
-action = input('írd be, hogy new_recipe vagy Storage_load vagy Order vagy Menu element delete: ')
-while action != '':
-    if action == 'new_recipe':
-        read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
-        material = input('Adjon meg egy alapanyagot: ')
-        while material != '':
-            read_files.recipe[-1].material.append(material) 
-            read_files.recipe[-1].amount.append(int(input("Kérlek add meg az alapanyag mennyiségét: ")))
-            i = 0
-            while i < len(read_files.storage) and read_files.storage[i][0] != material:
-                i += 1
+#I've become so numb
+import read_files
+import write_files
+import random
+import time
 
-            if i == len(read_files.storage):
-                write_files.storage(material)
+time.sleep(0.2)
 
-            material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
-
-        write_files.menu(read_files.recipe[-1].name)
-
-        write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
-
-    if action == "Storage_load":
+def New_recipe():
+    read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
+    material = input('Adjon meg egy alapanyagot: ')
+    while material != '':
+        read_files.recipe[-1].material.append(material) 
+        read_files.recipe[-1].amount.append(int(input("Kérlek add meg az alapanyag mennyiségét: ")))
         i = 0
-        m = input("kérem adja meg, hogy mit szeretne feltölteni: ")
-        while i < len(read_files.storage) and m != read_files.storage[i][0]:
-            i += 1 
+        while i < len(read_files.storage) and read_files.storage[i][0] != material:
+            i += 1
+
+        if i == len(read_files.storage):
+            write_files.storage(material)
+
+        material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
+
+    write_files.menu(read_files.recipe[-1].name)
+
+    write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)
+
+def Storage_load():
+    i = 0
+    m = input("kérem adja meg, hogy mit szeretne feltölteni: ")
+    while i < len(read_files.storage) and m != read_files.storage[i][0]:
+        i += 1 
         
-        if i < len(read_files.storage):
-            read_files.storage[i][1] += int(input("Kérlek add meg, hogy mennyi szeretnél hozzá adni: "))
-        else:
-            print("Rossz alapanyagot adtál meg!")
+    if i < len(read_files.storage):
+        read_files.storage[i][1] += int(input("Kérlek add meg, hogy mennyi szeretnél hozzá adni: "))
+    else:
+        print("Rossz alapanyagot adtál meg!")
         
-        write_files.storage_all(read_files.storage)
+    write_files.storage_all(read_files.storage)
         
-    if action == "Order":
-        there_is_a_table = True
-        while there_is_a_table:
-            which = int(input("Melyik asztalhoz ment a pincér: "))
+def Order():
+    there_is_a_table = True
+    while there_is_a_table:
+        which = int(input("Melyik asztalhoz ment a pincér: "))
+        if tables[which].waiter == '':
             tables[which].waiter = input("Ki lesz a pincér: ")
             name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
             tables[which].guest = random.choice(name)
-            o = input("Kérem adja meg a rendelését: ")
+        o = input("Kérem adja meg a rendelését: ")
+        o = o.strip()
+        while o != "":
+            i = 0
+            logic = False
+            while i < len(read_files.menu):
+                if o == read_files.menu[i][0]:
+                    j = 0
+                    while j < len(tables[which].orders) and o != tables[which].orders[j]:
+                        j += 1
+                    
+                    if j < len(tables[which].orders):
+                        tables[which].order_count[j] += 1
+                    else:
+                        tables[which].orders.append(o)
+                        tables[which].order_count.append(1)
+                    
+                    tables[which].price += int(read_files.menu[i][1])
+
+                    logic = True
+
+                    write_files.storage_minus(read_files.storage, o)
+                    etelek.append(o)
+                    
+                    break
+                i += 1
+
+            if logic == False:
+                print("Bocs haver ilyet nem esszel")
+
+            write_files.pay(tables, which)
+
+            o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
             o = o.strip()
-            while o != "":
-                i = 0
-                logic = False
-                while i < len(read_files.menu):
-                    if o == read_files.menu[i][0]:
-                        j = 0
-                        while j < len(tables[which].orders) and o != tables[which].orders[j]:
-                            j += 1
-                        
-                        if j < len(tables[which].orders):
-                            tables[which].order_count[j] += 1
-                        else:
-                            tables[which].orders.append(o)
-                            tables[which].order_count.append(1)
-                        
-                        tables[which].price += int(read_files.menu[i][1])
+        further = input("Szeretnél másik asztaltól is rendelést felvenni? (Y/N): ")
+        if further != "Y":
+            there_is_a_table = False
 
-                        logic = True
+def Order_finish():
+    which = input('Adja meg melyik asztalnál szeretnének fizetni (Nyomjon entert a megszakításhoz): ')
+    while (not(which.isnumeric()) or int(which) > table_count or int(which) < 0) and which != '':
+        which = input('Adja meg melyik asztalnál szeretnének fizetni (Nyomjon entert a megszakításhoz): ')
+    if which != '':
+        write_files.Conludes(tables[int(which)], which)
+        tables[int(which)].orders = []
+        tables[int(which)].order_count = []
+        tables[int(which)].price = 0
+        tables[int(which)].waiter = ""
+        tables[int(which)].guest = ""
+        write_files.Update_orders(tables)
 
                         
-                        write_files.storage_minus(read_files.storage, o)
-                        etelek.append(o)
-                        
-                        break
-                    i += 1
-
-                if logic == False:
-                    print("Bocs haver ilyet nem esszel")
-
-                write_files.pay(tables, which, tables[which].price)
-
-                o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
-                o = o.strip()
-            further = input("Szeretnél másik asztaltól is rendelést felvenni? (Y/N): ")
-            if further != "Y":
-                there_is_a_table = False
-
-        end = input("Ennyi az összes rendelás? Y/N: ")
-        if end == "Y":
-            write_files.Conludes(tables)
 
     if action == "Menu element delete":
         i = 0
@@ -116,3 +128,13 @@ while action != '':
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
 
     action = input('Nyomj egy entert: ')
+def Menu_element_delete():
+    i = 0
+    delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
+    while i < len(read_files.menu):
+        if delete == read_files.menu[i][0]:
+            read_files.menu[i].pop
+            read_files.storage[i].pop
+            write_files.menu_delete(read_files.menu, delete)
+            write_files.storage_delete(read_files.recipe, delete)
+        i += 1
