@@ -114,7 +114,7 @@ def Order_finish():
         write_files.Update_orders(tables)
 
                         
-
+    '''
     if action == "Menu element delete":
         i = 0
         delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
@@ -127,8 +127,10 @@ def Order_finish():
         
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
 
-    action = input('Nyomj egy entert: ')
+    action = input('Nyomj egy entert: ') 
+    '''  
 def Menu_element_delete():
+    '''
     i = 0
     delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
     while i < len(read_files.menu):
@@ -138,3 +140,14 @@ def Menu_element_delete():
             write_files.menu_delete(read_files.menu, delete)
             write_files.storage_delete(read_files.recipe, delete)
         i += 1
+    '''
+    i = 0
+    delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
+    while i < len(read_files.menu):
+            if delete == read_files.menu[i][0]:
+                write_files.menu_delete(read_files.menu, delete)
+                write_files.recipe_delete(read_files.recipe, delete)
+                write_files.storage_delete(read_files.recipe, read_files.storage, delete)
+            i += 1
+        
+    delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")
