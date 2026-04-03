@@ -1,12 +1,12 @@
-liszt;49250
-víz;99550
+liszt;48970
+víz;99400
 élesztő;500
 só;5000
-olívaolaj;9970
-paradicsomszósz;19760
-mozzarella;14700
+olívaolaj;9960
+paradicsomszósz;19680
+mozzarella;14600
 bazsalikom;500
-sonka;7820
+sonka;7760
 gomba;5000
 articsóka;2000
 fekete olajbogyó;1500
@@ -15,7 +15,7 @@ parmezán;3000
 ementáli;3000
 kolbász;5000
 bacon;6000
-lilahagyma;10000
+lilahagyma;9980
 erős paprika;2000
 ananász;3000
 csípős szalámi;4000
@@ -43,13 +43,13 @@ füstölt sajt;3000
 fehérbors;200
 spagetti;15000
 vöröshagyma;19700
-tojássárgája;194
+tojássárgája;193
 tejszín;11950
 feketebors;500
 lasagne tészta;5000
 darált marhahús;10000
 tej;20000
-vaj;5730
+vaj;5700
 penne;10000
 bazsalikom pesto;3000
 fenyőmag;500
@@ -67,7 +67,7 @@ alaplé;30000
 pirított kenyérkocka;3000
 meggy;5000
 alma;6000
-szilva;5000
+szilva;6500
 szegfűszeg;100
 cukor;14880
 paradicsomlé;20000
@@ -75,27 +75,27 @@ betűtészta;3000
 szárazbab;8000
 füstölt csülök;6000
 debreceni kolbász;4000
-tejföl;15000
+tejföl;14950
 ecet;5000
 csirkemell;20000
 vegyes zöldség;10000
 tárkony;200
 citromlé;3000
-tojás;500
-zsemlemorzsa;15000
-olaj;30000
+tojás;499
+zsemlemorzsa;14950
+olaj;29900
 sertéskaraj;15000
-rizs;20000
+rizs;19960
 borsó;5000
 panírmorzsa;10000
 sertés tarja;10000
 szalonna;8000
 sertéscomb;15000
 marhahús;15000
-mustár;3000
+mustár;2990
 zsemlegombóc;5000
 juhtúró;5000
-füstölt szalonna;6000
+füstölt szalonna;5970
 csusza tészta;10000
 túró;12000
 tepertő;3000
@@ -136,9 +136,9 @@ marhalábszár;12000
 nokedli;10000
 savanyú káposzta;15000
 sertéslapocka;12000
-káposztalevél;500
-vágott káposzta;8000
-darált sertéshús;12000
+káposztalevél;350
+vágott káposzta;7850
+darált sertéshús;11850
 sós palacsinta;200
 pörkölt hús;8000
 paprika mártás;6000
@@ -149,10 +149,10 @@ bébispenót;3000
 koktélparadicsom;5000
 csiperkegomba;8000
 tartármártás;5000
-karfiol;8000
-bélszín;8000
-kapribogyó;1500
-pirítós;500
+karfiol;7750
+bélszín;7800
+kapribogyó;1490
+pirítós;497
 baguett;100
 camembert sajt;5000
 áfonya lekvár;5000
@@ -167,3 +167,4 @@ palacsintatészta;200
 diótöltelék;5000
 túrótöltelék;5000
 idény zöldségek;10010
+Bacon;495

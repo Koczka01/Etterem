@@ -85,7 +85,7 @@ def storage_minus(storage, amount):
     with open("recept.csv", "r", encoding="utf8") as f:
         for sor in f:
             stripped = sor.strip()
-            if stripped:  # <-- skip empty lines
+            if stripped:
                 adat = stripped.split(";")
                 if adat[0] == amount:
                     hozzavalok.append([adat[1], int(adat[2])])
@@ -100,16 +100,17 @@ def storage_minus(storage, amount):
     for recept_elem in hozzavalok:
         nev = recept_elem[0]
         mennyiseg = recept_elem[1]
-
         for i in range(len(raktar_sorok)):
             if raktar_sorok[i][0] == nev:
-                aktualis_keszlet = int(raktar_sorok[i][1])
-                uj_keszlet = aktualis_keszlet - mennyiseg
-                raktar_sorok[i][1] = str(uj_keszlet)
-    
-    with open("raktar.csv", "w", encoding= "utf8") as f:
+                raktar_sorok[i][1] = str(int(raktar_sorok[i][1]) - mennyiseg)
+
+    with open("raktar.csv", "w", encoding="utf8") as f:
         for sor in raktar_sorok:
             f.write(f'{sor[0]};{sor[1]}\n')
+
+    read_files.storage.clear()
+    for sor in raktar_sorok:
+        read_files.storage.append([sor[0], int(sor[1])])
 
     return storage
 

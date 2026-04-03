@@ -39,6 +39,7 @@ def New_recipe():
 
                 if i == len(read_files.storage):
                     write_files.storage(material)
+                    read_files.storage.append([material, 0])
 
             material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
             amount = input("Kérlek add meg az alapanyag mennyiségét: ")
@@ -79,6 +80,8 @@ def Order():
             logic = False
             while i < len(read_files.menu):
                 if o == read_files.menu[i][0]:
+                    logic = True
+
                     k = 0
                     while o != read_files.recipe[k].name:
                         k += 1
@@ -88,23 +91,18 @@ def Order():
                                 if read_files.recipe[k].amount[l] > m[1]:
                                     logic = False
 
-                    j = 0
-                    while j < len(tables[which].orders) and o != tables[which].orders[j]:
-                        j += 1
-                    
-                    if j < len(tables[which].orders):
-                        tables[which].order_count[j] += 1
-                    else:
-                        tables[which].orders.append(o)
-                        tables[which].order_count.append(1)
-                    
-                    tables[which].price += int(read_files.menu[i][1])
-
-                    logic = True
-
-                    write_files.storage_minus(read_files.storage, o)
-                    etelek.append(o)
-                    
+                    if logic:
+                        j = 0
+                        while j < len(tables[which].orders) and o != tables[which].orders[j]:
+                            j += 1
+                        if j < len(tables[which].orders):
+                            tables[which].order_count[j] += 1
+                        else:
+                            tables[which].orders.append(o)
+                            tables[which].order_count.append(1)
+                        tables[which].price += int(read_files.menu[i][1])
+                        write_files.storage_minus(read_files.storage, o)
+                        etelek.append(o)
                     break
                 i += 1
 

@@ -19,14 +19,14 @@ with open('recept.csv', encoding='utf8') as file:
     recipe = []
     recipe.append(Recipe(read[0]))
     recipe[-1].material.append(read[1])
-    recipe[-1].amount.append(read[2])
+    recipe[-1].amount.append(int(read[2]))
     for i in file:
         i = i.strip().split(';')
         if i[0] != recipe[-1].name:
             recipe.append(Recipe(i[0]))
         
         recipe[-1].material.append(i[1])
-        recipe[-1].amount.append(i[2])
+        recipe[-1].amount.append(int(i[2]))
 
 with open('raktar.csv', encoding='utf8') as file:
     storage = []
