@@ -26,7 +26,7 @@ def menu(menu, price):
 def menu_delete(menu_list, target_name):
     new_menu = []
     for item in menu_list:
-        if item[0] != target_name: #ha az item első eleme nem egyenlő a target_name-val
+        if item[0] != target_name: #ha az item első eleme nem egyenlő a target_name-val akkor hozzá adjuk a new_menuhoz az itemet
             new_menu.append(item)
     with open("menu.csv", 'w', encoding='utf8') as file:
         for item in new_menu:
@@ -36,7 +36,7 @@ def menu_delete(menu_list, target_name):
 def recipe_delete(recipe_list, name):
     new_recipe = []
     for item in recipe_list:
-        if item.name != name: # Ha az item name része nem egyenlő a name (a deletével)
+        if item.name != name: # Ha az item name része nem egyenlő a name (a deletével), akkor hozzá adjuk a new_recipe-hez az itemet
             new_recipe.append(item)
     
     with open("recept.csv", 'w', encoding='utf8') as file: #megnyitjuk a recept.csv filet
