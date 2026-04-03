@@ -1,12 +1,12 @@
-liszt;50000
-víz;100000
+liszt;49500
+víz;99700
 élesztő;500
 só;5000
-olívaolaj;10000
-paradicsomszósz;20000
-mozzarella;15000
+olívaolaj;9980
+paradicsomszósz;19840
+mozzarella;14800
 bazsalikom;500
-sonka;8000
+sonka;7880
 gomba;5000
 articsóka;2000
 fekete olajbogyó;1500
@@ -42,14 +42,14 @@ trappista sajt;10000
 füstölt sajt;3000
 fehérbors;200
 spagetti;15000
-vöröshagyma;20000
-tojássárgája;200
-tejszín;12000
+vöröshagyma;19800
+tojássárgája;194
+tejszín;11950
 feketebors;500
 lasagne tészta;5000
 darált marhahús;10000
 tej;20000
-vaj;6000
+vaj;5730
 penne;10000
 bazsalikom pesto;3000
 fenyőmag;500
@@ -61,7 +61,7 @@ levesbetét tészta;5000
 szemesbors;300
 burgonya;100000
 fűszerpaprika;3000
-zsír;10000
+zsír;9940
 kömény;300
 alaplé;30000
 pirított kenyérkocka;3000
@@ -69,7 +69,7 @@ meggy;5000
 alma;6000
 szilva;5000
 szegfűszeg;100
-cukor;15000
+cukor;14880
 paradicsomlé;20000
 betűtészta;3000
 szárazbab;8000
@@ -112,21 +112,21 @@ kígyóuborka;8000
 savanyított uborka;5000
 töltött paprika;4000
 piskóta;8000
-dió;5000
+dió;4600
 mazsola;3000
 rum;2000
 csokiöntet;6000
 tejszínhab;8000
-mascarpone;6000
-babapiskóta;5000
-kávé;8000
-kakaópor;3000
+mascarpone;5550
+babapiskóta;4760
+kávé;7700
+kakaópor;2985
 gesztenyemassza;8000
 porcukor;5000
 rumaroma;500
-réteslap;3000
-cukorszirup;8000
-méz;4000
+réteslap;2500
+cukorszirup;7500
+méz;3850
 keksz;4000
 krémsajt;8000
 vanília;300
@@ -159,14 +159,16 @@ camembert sajt;5000
 tőkehalfilé;8000
 sör;8000
 remoulade mártás;4000
-marhabélszín;8000
-rozmaring;300
-zöldbors;500
-szarvas comb;10000
-vörösbor;15000
-áfonya;3000
-borókabogyó;200
+marhabélszín;7780
+rozmaring;298
+zöldbors;495
+szarvas comb;9600
+vörösbor;14800
+áfonya;2960
+borókabogyó;196
 palacsintatészta;200
 diótöltelék;5000
 túrótöltelék;5000
 idény zöldségek;10010
+vér;0
+haj;0

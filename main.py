@@ -15,7 +15,9 @@ class table:
         self.waiter = ""
         self.guest = ""
 
-tables = [table() for _ in range(table_count)]
+tables = []
+for i in range(table_count):
+    tables.append(table())
 
 action = input('írd be, hogy new_recipe vagy Storage_load vagy Order vagy Menu element delete: ')
 while action != '':
@@ -106,10 +108,9 @@ while action != '':
         delete = input("Kérem adja hogy melyik ételt szeretné törölni a menüből: ")
         while i < len(read_files.menu):
             if delete == read_files.menu[i][0]:
-                read_files.menu[i].pop
-                read_files.storage[i].pop
                 write_files.menu_delete(read_files.menu, delete)
-                write_files.storage_delete(read_files.recipe, delete)
+                write_files.recipe_delete(read_files.recipe, delete)
+                write_files.storage_delete(read_files.recipe, read_files.storage, delete)
             i += 1
         
         delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")

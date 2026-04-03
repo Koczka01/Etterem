@@ -24,17 +24,60 @@ def menu(menu):
     file.close
 
 def menu_delete(menu_list, target_name):
-    new_menu = [item for item in menu_list if item[0] != target_name]
+    new_menu = []
+    for item in menu_list:
+        if item[0] != target_name:
+            new_menu.append(item)
     with open("menu.csv", 'w', encoding='UTF-8') as file:
         for item in new_menu:
             file.write(f'{item[0]};{item[1]}\n')
     return new_menu
 
-def storage_delete(storage_list, name):
-    new_storage = [item for item in storage_list if item[0] != name]
-    with open("recept.csv", 'w', encoding= 'utf-8') as file:
+def recipe_delete(recipe_list, name):
+    new_recipe = []
+    for item in recipe_list:
+        if item.name != name:
+            new_recipe.append(item)
+    
+    with open("recept.csv", 'w', encoding='utf-8') as file:
+        for item in new_recipe:
+            for j in range(len(item.material)):
+                file.write(f'{item.name};{item.material[j]};{item.amount[j]}\n')
+    return new_recipe
+
+def storage_delete(recipe_list, storage_list, name):
+    delete_element = []
+    for item in recipe_list:
+        if item.name == name:
+            for anyag in item.material:
+                delete_element.append(anyag)
+
+    there_is_another_recipe = []
+    for item in recipe_list:
+        if item.name != name:
+            for anyag in item.material:
+                there_is_another_recipe.append(anyag)
+
+    new_storage = []
+    for item in storage_list:
+        benne_van_masban = False
+        benne_van_toroltban = False
+
+        for anyag in there_is_another_recipe:
+            if item[0] == anyag:
+                benne_van_masban = True
+
+        for anyag in delete_element:
+            if item[0] == anyag:
+                benne_van_toroltban = True
+
+        if benne_van_masban or not benne_van_toroltban:
+            new_storage.append(item)
+
+    with open("raktar.csv", "w", encoding="UTF-8") as file:
         for item in new_storage:
-            file.write(f'{item[0]};{item[1]}\n')
+            file.write(f"{item[0]};{item[1]}\n")
+    
     return new_storage
 
 def storage_minus(storage, amount):
@@ -80,7 +123,7 @@ def pay(tables, which, price):
 
     talalt = False
     for i in range(len(sorok)):
-        if sorok[i].startswith(f"{which};"):
+        if sorok[i].split(";")[0] == str(which):
             sorok[i] = uj_sor
             talalt = True
             break
