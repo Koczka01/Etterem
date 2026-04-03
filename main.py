@@ -4,7 +4,7 @@ table_count = int(input('Adja meg hány asztal van: '))
 
 etelek = []
 
-class table:
+class table: #Asztalok
     def __init__(self) -> None:
         self.orders = []
         self.order_count = []
@@ -13,7 +13,7 @@ class table:
         self.guest = ""
 
 tables = []
-for i in range(table_count):
+for i in range(table_count): #Asztal tábla feltöltése
     tables.append(table())
 
 import read_files
@@ -23,18 +23,18 @@ import time
 
 time.sleep(0.2)
 
-def New_recipe():
-    name = input('Add meg a nevét a kajának: ')
+def New_recipe(): #Új recept hozzáadása
+    name = input('Add meg a nevét a kajának: ') #Kaja neve
     if name != '':
-        read_files.recipe.append(read_files.Recipe(name))
+        read_files.recipe.append(read_files.Recipe(name)) 
         material = input('Adjon meg egy alapanyagot: ')
         amount = input("Kérlek add meg az alapanyag mennyiségét: ")
         while material != '':
-            if amount.isnumeric() and amount != '':
+            if amount.isnumeric() and amount != '': #Mennyiség adat ellenőrzése
                 read_files.recipe[-1].material.append(material) 
                 read_files.recipe[-1].amount.append(int(amount))
                 i = 0
-                while i < len(read_files.storage) and read_files.storage[i][0] != material:
+                while i < len(read_files.storage) and read_files.storage[i][0] != material: #Ellenőrizzük, hogy a raktár.csv fileban szerepel-e már az alapanyag
                     i += 1
 
                 if i == len(read_files.storage):
@@ -55,7 +55,7 @@ def New_recipe():
 def Storage_load():
     i = 0
     m = input("kérem adja meg, hogy mit szeretne feltölteni: ")
-    while i < len(read_files.storage) and m != read_files.storage[i][0]:
+    while i < len(read_files.storage) and m != read_files.storage[i][0]: #Megkeressük, hogy hol van a keresett alapanyag
         i += 1 
         
     if i < len(read_files.storage):
@@ -78,12 +78,12 @@ def Order():
         while o != "":
             i = 0
             logic = False
-            while i < len(read_files.menu):
+            while i < len(read_files.menu): #Megkeressük, hogy van-e ilyen étel
                 if o == read_files.menu[i][0]:
                     logic = True
 
-                    k = 0
-                    while o != read_files.recipe[k].name:
+                    k = 0 # Ellenőrizzük, hogy van-e elegendő alapanyag
+                    while o != read_files.recipe[k].name: 
                         k += 1
                     for l in range(len(read_files.recipe[k].material)):
                         for m in read_files.storage:
@@ -91,7 +91,7 @@ def Order():
                                 if read_files.recipe[k].amount[l] > m[1]:
                                     logic = False
 
-                    if logic:
+                    if logic: #Ha lehetséges elkészíteni, akkor True
                         j = 0
                         while j < len(tables[which].orders) and o != tables[which].orders[j]:
                             j += 1
@@ -107,11 +107,11 @@ def Order():
                 i += 1
 
             if logic == False:
-                print("Bocs haver ilyet nem esszel")
+                print("Bocs haver ilyet nem esszel") #Kedvesen közli, hogy ilyen étellel nem tudunk szolgálni
 
             write_files.pay(tables, which)
 
-            o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
+            o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ") #Megkérdezi a program, hogy szeretné-e a felhasználó több étellel bővíteni a rendelést
             o = o.strip()
         further = input("Szeretnél másik asztaltól is rendelést felvenni? (Y/N): ")
         if further != "Y":
@@ -121,8 +121,8 @@ def Order_finish():
     which = input('Adja meg melyik asztalnál szeretnének fizetni (Nyomjon entert a megszakításhoz): ')
     while (not(which.isnumeric()) or int(which) > table_count or int(which) < 0) and which != '':
         which = input('Adja meg melyik asztalnál szeretnének fizetni (Nyomjon entert a megszakításhoz): ')
-    if which != '':
-        write_files.Conludes(tables[int(which)], which)
+    if which != '': #Ha nincs megszakítva, akkor az asztal paramétereit visszaállítja alapértelmetettre
+        write_files.Conludes(tables[int(which)], which) 
         tables[int(which)].orders = []
         tables[int(which)].order_count = []
         tables[int(which)].price = 0

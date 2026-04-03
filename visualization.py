@@ -7,7 +7,7 @@ import msvcrt
 import time
 import main
 
-def on_key_release(key):
+def on_key_release(key): #Billentyű figyelő
     global selected, options, doit, enter
     if key == keyboard.Key.down and selected < len(options)-1:
         selected += 1
@@ -23,28 +23,8 @@ def on_key_release(key):
         doit = True
         return False
 
-'''def new_recipe():
-    os.system('cls')
-    read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
-    material = input('Adjon meg egy alapanyagot: ')
-    while material != '':
-        read_files.recipe[-1].material.append(material) 
-        read_files.recipe[-1].amount.append(int(input("Kérlek add meg az alapanyag mennyiségét: ")))
-        i = 0
-        while i < len(read_files.storage) and read_files.storage[i][0] != material:
-            i += 1
-
-        if i == len(read_files.storage):
-            write_files.storage(material)
-
-        material = input('Adjon meg egy alapanyagot, ha nem szeretne többet, akkor nyomjon entert: ')
-
-    write_files.menu(read_files.recipe[-1].name)
-
-    write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)'''
-
-options = ['main.Order()', 'main.Order_finish()', 'main.Storage_load()', 'main.New_recipe()', 'main.Menu_element_delete()', 'exit()']
-optionsshow = ['Rendelés hozzáadása', 'Fizetés', 'Raktár töltése', 'Új étel hozzáadása', 'Étel törlése', 'Bezárás']
+options = ['main.Order()', 'main.Order_finish()', 'main.Storage_load()', 'main.New_recipe()', 'main.Menu_element_delete()', 'exit()'] #Menü elemei
+optionsshow = ['Rendelés hozzáadása', 'Fizetés', 'Raktár töltése', 'Új étel hozzáadása', 'Étel törlése', 'Bezárás'] #Menü elemek megjelenített szövege
 longest = len(optionsshow[0])
 for i in optionsshow:
     if len(i) > longest:
@@ -55,7 +35,7 @@ longest += 8
 enter = False
 doit = False
 
-while not(enter):
+while not(enter): #Design
     os.system('cls')
     print(' ' + '_'*longest)
     print('|' + ' '*longest + '|')
@@ -65,14 +45,14 @@ while not(enter):
         else: print('|' + ' '*int(space) + colored(optionsshow[i], 'green') + ' '*round(space) + '|')
     print('|' + '_'*longest + '|')
 
-    with keyboard.Listener(on_release=on_key_release) as listener:
+    with keyboard.Listener(on_release=on_key_release) as listener: #Billentyűfigyelő meghívása
         listener.join()
     os.system('cls')
 
-    if doit:
+    if doit: #Törli az eltárolt billentyűleütéseket
         while msvcrt.kbhit():
             msvcrt.getch()
 
-        eval(options[selected])
+        eval(options[selected]) #Lefuttatja a menü kiválasztott programjáz
         doit = False
-        time.sleep(0.2)
+        time.sleep(0.2) #Hibák elkerülése végett vár mielőtt megjeleníti a menüt újra
