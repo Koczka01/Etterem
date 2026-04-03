@@ -1,11 +1,4 @@
-#I've become so numb
-import read_files
-import write_files
-import random
-import time
-
 table_count = int(input('Adja meg hány asztal van: '))
-time.sleep(0.2)
 
 etelek = []
 
@@ -18,6 +11,14 @@ class table:
         self.guest = ""
 
 tables = [table() for _ in range(table_count)]
+
+#I've become so numb
+import read_files
+import write_files
+import random
+import time
+
+time.sleep(0.2)
 
 def New_recipe():
     read_files.recipe.append(read_files.Recipe(input('Add meg a nevét a kajának: ')))
@@ -55,9 +56,10 @@ def Order():
     there_is_a_table = True
     while there_is_a_table:
         which = int(input("Melyik asztalhoz ment a pincér: "))
-        tables[which].waiter = input("Ki lesz a pincér: ")
-        name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
-        tables[which].guest = random.choice(name)
+        if tables[which].waiter == '':
+            tables[which].waiter = input("Ki lesz a pincér: ")
+            name = ["Aliz", "Anna", "Áron", "Bence", "Benett", "Boglárka", "Boróka", "Botond", "Dániel", "Dominik", "Emma", "Hanna", "Hunor", "Jázmin", "Kamilla", "Lelle", "Léna", "Levente", "Lili", "Luca", "Marcell", "Máté", "Milán", "Mira", "Nimród", "Noel", "Olivér", "Zalán", "Zoé", "Zsófia"]
+            tables[which].guest = random.choice(name)
         o = input("Kérem adja meg a rendelését: ")
         o = o.strip()
         while o != "":
@@ -79,7 +81,6 @@ def Order():
 
                     logic = True
 
-                        
                     write_files.storage_minus(read_files.storage, o)
                     etelek.append(o)
                     
@@ -89,7 +90,7 @@ def Order():
             if logic == False:
                 print("Bocs haver ilyet nem esszel")
 
-            write_files.pay(tables, which, tables[which].price)
+            write_files.pay(tables, which)
 
             o = input("Kérem adjon meg még egy új ételt, ha nem szeretne akkor nyomjon egy entert: ")
             o = o.strip()
@@ -97,9 +98,18 @@ def Order():
         if further != "Y":
             there_is_a_table = False
 
-    end = input("Ennyi az összes rendelás? Y/N: ")
-    if end == "Y":
-        write_files.Conludes(tables)
+def Order_finish():
+    which = input('Adja meg melyik asztalnál szeretnének fizetni (Nyomjon entert a megszakításhoz): ')
+    while (not(which.isnumeric()) or int(which) > table_count or int(which) < 0) and which != '':
+        which = input('Adja meg melyik asztalnál szeretnének fizetni (Nyomjon entert a megszakításhoz): ')
+    if which != '':
+        write_files.Conludes(tables[int(which)], which)
+        tables[int(which)].orders = []
+        tables[int(which)].order_count = []
+        tables[int(which)].price = 0
+        tables[int(which)].waiter = ""
+        tables[int(which)].guest = ""
+        write_files.Update_orders(tables)
 
 def Menu_element_delete():
     i = 0
@@ -111,5 +121,3 @@ def Menu_element_delete():
             write_files.menu_delete(read_files.menu, delete)
             write_files.storage_delete(read_files.recipe, delete)
         i += 1
-    
-    delete = input("Kérem adja hogy melyik más ételt szeretné kitörölni a listából, hanem szeretne, akkor nyomjon egy enter: ")

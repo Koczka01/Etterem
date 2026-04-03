@@ -43,8 +43,8 @@ def on_key_release(key):
 
     write_files.recipe(read_files.recipe[-1].name, read_files.recipe[-1].material, read_files.recipe[-1].amount)'''
 
-options = ['main.Order()', 'main.Storage_load()', 'main.New_recipe()', 'main.Menu_element_delete()', 'exit()']
-optionsshow = ['Rendelés hozzáadása', 'Raktár töltése', 'Új étel hozzáadása', 'Étel törlése', 'Bezárás']
+options = ['main.Order()', 'main.Order_finish()', 'main.Storage_load()', 'main.New_recipe()', 'main.Menu_element_delete()', 'exit()']
+optionsshow = ['Rendelés hozzáadása', 'Fizetés', 'Raktár töltése', 'Új étel hozzáadása', 'Étel törlése', 'Bezárás']
 longest = len(optionsshow[0])
 for i in optionsshow:
     if len(i) > longest:
